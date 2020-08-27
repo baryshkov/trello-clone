@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+
+  "extends": [
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "promise", "unicorn"],
+  "rules": {
+    "max-len": ["error", 100, 2, { "ignoreUrls": true }],
+    "react/state-in-constructor": "off",
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "react/destructuring-assignment": "off",
+    "react/require-default-props": "off",
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "unicorn/no-abusive-eslint-disable": "off"
+  }
+}

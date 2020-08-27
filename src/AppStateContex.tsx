@@ -35,15 +35,34 @@ const appData: AppState = {
   ],
 };
 
+type Action =
+  | { type: 'ADD_LIST'; payload: string }
+  | { type: 'ADD_TASK'; payload: { text: string; taskId: string } };
+
 interface AppStateContextProps {
   state: AppState;
 }
+
+export const appStateReducer = (action: Action, state: AppState): AppState => {
+  switch (action.type) {
+    case 'ADD_LIST': {
+      return { ...state };
+    }
+    case 'ADD_TASK': {
+      return { ...state };
+    }
+    default:
+      return state;
+  }
+};
 
 const AppStateContex = createContext<AppStateContextProps>(
   {} as AppStateContextProps,
 );
 
-export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
+export const AppStateProvider = ({
+  children,
+}: React.PropsWithChildren<Record<string, unknown>>) => {
   return (
     <AppStateContex.Provider value={{ state: appData }}>
       {children}

@@ -5,4 +5,4 @@ interface CardProps {
   text: string;
 }
 
-export const Card = ({ text }: CardProps) => <CardContainer>{text}</CardContainer>;
+export const Card = ({ text }: CardProps): JSX.Element => <CardContainer>{text}</CardContainer>;
